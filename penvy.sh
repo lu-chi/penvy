@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-
 [ -z "$1" ] && { echo "No argument provided... Quitting!"; exit 1; }
 
 proj=$1
 env="venv"
-
+log="${proj}.log"
 
 function init_project() {
 
@@ -26,5 +25,5 @@ function init_project() {
 
 # pip freeze
 
-[ -e $proj/$env/bin/activate ] && { echo "Project already exist. Do you want to create a new one?"; exit 1;} 
-init_project $proj $env
+[ -e $proj/$env/bin/activate ] && { echo "Project already exist."; exit 1; } 
+init_project $proj $env >> $proj/$log
