@@ -26,4 +26,4 @@ function init_project() {
 # pip freeze
 
 [ -e $proj/$env/bin/activate ] && { echo "Project already exist."; exit 1; } 
-init_project $proj $env >> $proj/$log
+init_project $proj $env >> $log
