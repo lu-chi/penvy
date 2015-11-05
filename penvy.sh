@@ -18,12 +18,14 @@ function init_project() {
     # pip install -a requirements.txt
     pip install --upgrade pip
     
-    echo "# To activate: source ${proj}/${env}/bin/activate"
-    echo "# To search for installed packages: yolk -l"
-    echo "# To deactivate: deactivate"
 }
 
 # pip freeze
 
 [ -e $proj/$env/bin/activate ] && { echo "Project already exist."; exit 1; } 
 init_project $proj $env >> $log
+
+echo "# To activate: source ${proj}/${env}/bin/activate"
+echo "# To search for installed packages: yolk -l"
+echo "# To deactivate: deactivate"
+
